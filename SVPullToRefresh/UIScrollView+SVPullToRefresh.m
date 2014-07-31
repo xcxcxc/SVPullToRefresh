@@ -180,9 +180,9 @@ static char UIScrollViewPullToRefreshView;
         self.state = SVPullToRefreshStateStopped;
         self.showsDateLabel = NO;
         
-        self.titles = [NSMutableArray arrayWithObjects:NSLocalizedString(@"Pull to refresh...",),
-                             NSLocalizedString(@"Release to refresh...",),
-                             NSLocalizedString(@"Loading...",),
+        self.titles = [NSMutableArray arrayWithObjects:NSLocalizedString(@"下拉进行刷新...",),
+                             NSLocalizedString(@"松开即可刷新...",),
+                             NSLocalizedString(@"加载中...",),
                                 nil];
         
         self.subtitles = [NSMutableArray arrayWithObjects:@"", @"", @"", @"", nil];
@@ -461,7 +461,7 @@ static char UIScrollViewPullToRefreshView;
 - (UILabel *)titleLabel {
     if(!_titleLabel) {
         _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 210, 20)];
-        _titleLabel.text = NSLocalizedString(@"Pull to refresh...",);
+        _titleLabel.text = NSLocalizedString(@"下拉进行刷新...",);
         _titleLabel.font = [UIFont boldSystemFontOfSize:14];
         _titleLabel.backgroundColor = [UIColor clearColor];
         _titleLabel.textColor = textColor;
@@ -572,12 +572,12 @@ static char UIScrollViewPullToRefreshView;
 
 - (void)setLastUpdatedDate:(NSDate *)newLastUpdatedDate {
     self.showsDateLabel = YES;
-    self.dateLabel.text = [NSString stringWithFormat:NSLocalizedString(@"Last Updated: %@",), newLastUpdatedDate?[self.dateFormatter stringFromDate:newLastUpdatedDate]:NSLocalizedString(@"Never",)];
+//    self.dateLabel.text = [NSString stringWithFormat:NSLocalizedString(@"Last Updated: %@",), newLastUpdatedDate?[self.dateFormatter stringFromDate:newLastUpdatedDate]:NSLocalizedString(@"Never",)];
 }
 
 - (void)setDateFormatter:(NSDateFormatter *)newDateFormatter {
 	dateFormatter = newDateFormatter;
-    self.dateLabel.text = [NSString stringWithFormat:NSLocalizedString(@"Last Updated: %@",), self.lastUpdatedDate?[newDateFormatter stringFromDate:self.lastUpdatedDate]:NSLocalizedString(@"Never",)];
+//    self.dateLabel.text = [NSString stringWithFormat:NSLocalizedString(@"Last Updated: %@",), self.lastUpdatedDate?[newDateFormatter stringFromDate:self.lastUpdatedDate]:NSLocalizedString(@"Never",)];
 }
 
 #pragma mark -
